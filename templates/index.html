@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Toggle Rows Example</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+      </tr>
+      {% for row in data %}
+      <tr>
+        <td>{{ row['name'] }}</td>
+        <td>{{ row['email'] }}</td>
+        <td>{{ row['age'] }}</td>
+      </tr>
+      {% endfor %}
+      <tr id="last-row" class="hidden">
+        <td>New Row</td>
+        <td>New Email</td>
+        <td>New Age</td>
+      </tr>
+    </table>
+    <input type="checkbox" id="toggle-row">
+    <label for="toggle-row" id="toggle-row-label">Toggle Row</label>
+    <div id="toggle-text" class="hidden">
+      This text is shown when the toggle row button is pressed.
+    </div>
+  </body>
+</html>

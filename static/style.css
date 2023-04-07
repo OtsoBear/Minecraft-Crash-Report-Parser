@@ -1,0 +1,35 @@
+/* Style the checkbox to look like a button */
+#toggle-row {
+    display: none;
+  }
+  #toggle-row-label {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  #toggle-row:checked + #toggle-row-label {
+    background-color: #ccc;
+  }
+  
+  /* Hide the last row by default using visibility */
+  #last-row {
+    visibility: hidden;
+  }
+  /* Show the last row when the checkbox is checked */
+  #toggle-row:checked ~ #last-row {
+    visibility: visible;
+  }
+  
+  /* Show the toggle text when the checkbox is checked */
+  #toggle-row:checked ~ #toggle-text {
+    display: block;
+  }
+  #toggle-text {
+    display: none;
+    margin-top: 10px;
+  }
+  
